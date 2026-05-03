@@ -3,12 +3,13 @@ import awsSaa from '../assets/aws-saa.png'
 import jamf from '../assets/jamf.png'
 import isc2 from '../assets/isc2-cc.png'
 import terraform from '../assets/terraform.png'
+import headshot from '../assets/headshot.jpg'
 
 const lines = [
   '> Establishing secure connection...',
   '> Authenticating credentials...',
-  '> Loading systems...',
-  '> Welcome, Carsten.',
+  '> Loading portfolio...',
+  '> Access granted.',
 ]
 
 const certs = [
@@ -187,45 +188,25 @@ export default function Hero() {
       {/* RIGHT — headshot + terminal + certs */}
       <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', gap: '24px' }}>
 
-        {/* Headshot placeholder */}
+{/* Headshot */}
         <div style={{
           width: '200px', height: '200px',
           borderRadius: '16px',
           border: '1px solid var(--border2)',
-          background: 'var(--card)',
-          display: 'flex', flexDirection: 'column',
-          alignItems: 'center', justifyContent: 'center',
           alignSelf: 'flex-end',
           position: 'relative',
           overflow: 'hidden',
         }}>
-          <div style={{
-            width: '64px', height: '64px',
-            borderRadius: '50%',
-            background: 'var(--border2)',
-            marginBottom: '12px',
-          }} />
-          <div style={{
-            width: '100px', height: '8px',
-            borderRadius: '4px',
-            background: 'var(--border)',
-          }} />
-          <div style={{
-            position: 'absolute', bottom: '12px',
-            fontSize: '10px', color: 'var(--text)',
-            fontFamily: 'var(--font-mono)',
-            letterSpacing: '0.1em',
-          }}>
-            [ headshot ]
-          </div>
-          {[
-            { top: 0, left: 0, borderTop: '2px solid var(--green)', borderLeft: '2px solid var(--green)', borderRadius: '16px 0 0 0' },
-            { top: 0, right: 0, borderTop: '2px solid var(--green)', borderRight: '2px solid var(--green)', borderRadius: '0 16px 0 0' },
-            { bottom: 0, left: 0, borderBottom: '2px solid var(--green)', borderLeft: '2px solid var(--green)', borderRadius: '0 0 0 16px' },
-            { bottom: 0, right: 0, borderBottom: '2px solid var(--green)', borderRight: '2px solid var(--green)', borderRadius: '0 0 16px 0' },
-          ].map((s, i) => (
-            <div key={i} style={{ position: 'absolute', width: '16px', height: '16px', ...s }} />
-          ))}
+          <img
+            src={headshot}
+            alt="Carsten Boloz"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+            }}
+          />
         </div>
 
         {/* Terminal */}
@@ -305,7 +286,7 @@ export default function Hero() {
                     width: '72px', height: '72px',
                     objectFit: 'contain',
                     borderRadius: '8px',
-                    background: cert.darkBg ? '#e8f4f8' : 'transparent',
+                    background: cert.darkBg ? '#ffffff' : 'transparent',
                     padding: cert.darkBg ? '6px' : '0',
                   }}
                 />

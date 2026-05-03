@@ -1,6 +1,25 @@
+import { useState, useEffect } from 'react'
+
 const links = ['Home', 'About', 'Certifications', 'Skills', 'Projects', 'Contact']
 
 export default function Nav() {
+  const [active, setActive] = useState('Home')
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = links.map(l => document.getElementById(l.toLowerCase()))
+      const scrollY = window.scrollY + 100
+      sections.forEach(section => {
+        if (!section) return
+        if (section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY) {
+          setActive(section.id.charAt(0).toUpperCase() + section.id.slice(1))
+        }
+      })
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
@@ -40,16 +59,23 @@ export default function Nav() {
           <li key={link}>
             <a
               href={'#' + link.toLowerCase()}
+              onClick={() => setActive(link)}
               style={{
                 fontSize: '13px',
-                fontWeight: 500,
-                color: 'var(--text)',
+                fontWeight: active === link ? 600 : 500,
+                color: active === link ? 'var(--green)' : 'var(--text)',
                 letterSpacing: '0.04em',
-                transition: 'color 0.2s',
                 fontFamily: 'var(--font-sans)',
+                transition: 'color 0.2s',
+                paddingBottom: '4px',
+                borderBottom: active === link ? '1px solid var(--green)' : '1px solid transparent',
               }}
-              onMouseEnter={e => e.target.style.color = 'var(--green)'}
-              onMouseLeave={e => e.target.style.color = 'var(--text)'}
+              onMouseEnter={e => {
+                if (active !== link) e.target.style.color = 'var(--white)'
+              }}
+              onMouseLeave={e => {
+                if (active !== link) e.target.style.color = 'var(--text)'
+              }}
             >
               {link}
             </a>
