@@ -264,10 +264,11 @@ export default function Hero() {
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
           gap: '12px',
+          marginTop: '12px',
         }}>
           {certs.map(cert => (
             <div key={cert.label} style={{
-              padding: '16px 10px',
+              padding: '20px 10px',
               border: `1px solid ${cert.done ? 'var(--border2)' : 'var(--border)'}`,
               borderRadius: '10px',
               background: 'var(--card)',
@@ -283,7 +284,7 @@ export default function Hero() {
                   src={cert.img}
                   alt={cert.label}
                   style={{
-                    width: '72px', height: '72px',
+                    width: '90px', height: '90px',
                     objectFit: 'contain',
                     borderRadius: '8px',
                     background: cert.darkBg ? '#ffffff' : 'transparent',
@@ -295,7 +296,7 @@ export default function Hero() {
                   src={terraform}
                   alt={cert.label}
                   style={{
-                    width: '72px', height: '72px',
+                    width: '90px', height: '90px',
                     objectFit: 'contain',
                     borderRadius: '8px',
                     filter: 'grayscale(100%)',
@@ -305,7 +306,7 @@ export default function Hero() {
               )}
               <div style={{ textAlign: 'center' }}>
                 <div style={{
-                  fontSize: '10px', fontWeight: 700,
+                  fontSize: '12px', fontWeight: 700,
                   color: cert.done ? 'var(--white)' : 'var(--text)',
                   fontFamily: 'var(--font-sans)',
                   letterSpacing: '0.04em',
@@ -313,7 +314,7 @@ export default function Hero() {
                   {cert.label}
                 </div>
                 <div style={{
-                  fontSize: '9px',
+                  fontSize: '11px',
                   color: cert.done ? 'var(--green)' : 'var(--cyan)',
                   fontFamily: 'var(--font-mono)',
                   marginTop: '2px',
