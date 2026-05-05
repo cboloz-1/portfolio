@@ -7,14 +7,22 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = links.map(l => document.getElementById(l.toLowerCase()))
-      const scrollY = window.scrollY + 100
-      sections.forEach(section => {
-        if (!section) return
-        if (section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY) {
-          setActive(section.id.charAt(0).toUpperCase() + section.id.slice(1))
+      const scrollY = window.scrollY + 200
+
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+        setActive('Contact')
+        return
+      }
+
+      const sections = [...links].reverse()
+      for (const link of sections) {
+        const section = document.getElementById(link.toLowerCase())
+        if (!section) continue
+        if (section.offsetTop <= scrollY) {
+          setActive(link)
+          return
         }
-      })
+      }
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)

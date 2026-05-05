@@ -19,7 +19,7 @@ const IconTrend = () => (
 )
 
 const stats = [
-  { value: '~ 1yr', label: 'In IT' },
+  { value: '> 1yr', label: 'In IT' },
   { value: 'BSU', label: 'Bridgewater State' },
   { value: 'MA', label: 'Based In' },
 ]
@@ -85,9 +85,9 @@ export default function About() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {[
-              `I graduated from Bridgewater State University and landed my first role as an Information Systems Specialist at a defense-focused technology contractor in Massachusetts. Most of my day-to-day involves enterprise endpoint management using Jamf, supporting macOS environments across the organization.`,
-              `Over the past year I have been drawn more and more toward cloud infrastructure. On my own time I have been building with Terraform, Ansible, Docker, and AWS, and recently completed my first end-to-end infrastructure pipeline, provisioning a full AWS environment from scratch using Infrastructure as Code and deploying a containerized application behind an NGINX reverse proxy.`,
-              `Outside of work I played soccer all four years at Bridgewater State and still enjoy the game. I also spend time golfing, running, and playing chess.`,
+              `I graduated from Bridgewater State University and began my career as an Information Systems Specialist at a defense-focused technology contractor in Massachusetts. While my role initially centered on enterprise endpoint management using Jamf in macOS environments, I have increasingly taken on responsibilities related to cloud infrastructure, system provisioning, and access management.`,
+              `Over the past year, I’ve focused on deepening my skill set in cloud and infrastructure engineering. I’ve gained hands-on experience with tools like Terraform, Ansible, Docker, and AWS, while strengthening my understanding of automation, networking, and identity systems.`,
+              `Outside of work, I enjoy staying active through golf and running, as well as spending time with friends and family!`,
             ].map((p, i) => (
               <p key={i} style={{
                 fontSize: '15px', lineHeight: 1.8,
