@@ -136,8 +136,8 @@ export default function Hero() {
           Started my career in IT as an Information Systems Specialist managing
           enterprise endpoints with Jamf. Now focused on cloud infrastructure,
           provisioning environments with Terraform, automating configuration
-          with Ansible, and deploying containerized workloads on AWS. Actively
-          building toward a full-time cloud engineering role.
+          with Ansible, and deploying containerized workloads on AWS.
+          Building toward a full-time cloud engineering role.
         </p>
 
         {/* CTA buttons */}
