@@ -26,8 +26,8 @@ const stats = [
 
 const values = [
   { icon: <IconGear />, title: 'Builder Mentality', desc: 'I learn by doing. Every concept I pick up gets turned into a real project.' },
-  { icon: <IconCloud />, title: 'Cloud Focused', desc: 'Actively shifting from endpoint management into cloud infrastructure and IaC.' },
-  { icon: <IconTrend />, title: 'Always Improving', desc: 'Certifications, projects, and hands-on labs are a constant part of my routine.' },
+  { icon: <IconCloud />, title: 'Background', desc: 'Started in endpoint management and have been expanding into cloud infrastructure, IaC, and automation on my own time.' },
+  { icon: <IconTrend />, title: 'Always Improving', desc: 'Whether it is a new cert, a home lab, or a side project, I am always working toward something.' },
 ]
 
 const currently = [
