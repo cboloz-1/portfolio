@@ -23,9 +23,9 @@ const contacts = [
   {
     type: 'email',
     label: 'Email',
-    value: 'cdboloz1@gmail.com',
-    display: 'cdboloz1@gmail.com',
-    href: 'mailto:cdboloz1@gmail.com',
+    value: 'contact@cboloz.com',
+    display: 'contact@cboloz.com',
+    href: 'mailto:contact@cboloz.com',
   },
   {
     type: 'linkedin',
