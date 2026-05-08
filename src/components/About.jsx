@@ -5,12 +5,6 @@ const IconGear = () => (
   </svg>
 )
 
-const IconCloud = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-  </svg>
-)
-
 const IconTrend = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
@@ -18,23 +12,51 @@ const IconTrend = () => (
   </svg>
 )
 
+const IconPerson = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+)
+
 const stats = [
   { value: '> 1yr', label: 'In IT' },
-  { value: 'BSU', label: 'Bridgewater State' },
   { value: 'MA', label: 'Based In' },
 ]
 
-const values = [
-  { icon: <IconGear />, title: 'Builder Mentality', desc: 'I learn by doing. Every concept I pick up gets turned into a real project.' },
-  { icon: <IconCloud />, title: 'Background', desc: 'Started in endpoint management and have been expanding into cloud infrastructure, IaC, and automation on my own time.' },
-  { icon: <IconTrend />, title: 'Always Improving', desc: 'Whether it is a new cert, a home lab, or a side project, I am always working toward something.' },
-]
-
-const currently = [
-  'Building cloud infrastructure projects at home',
-  'Deepening AWS knowledge beyond the SAA',
-  'Terraform Associate on the near-term roadmap',
-  'Staying active through soccer, golf, and running',
+const timeline = [
+  {
+    date: 'Jun 2025 - Present',
+    title: 'Information Systems Specialist',
+    org: 'Aptima, Inc.',
+    location: 'Woburn, MA',
+    current: true,
+    education: false,
+  },
+  {
+    date: 'Mar 2025 - May 2025',
+    title: 'Cybersecurity Intern',
+    org: 'MassCyberCenter / MA Technology Collaborative',
+    location: 'Remote',
+    current: false,
+    education: false,
+  },
+  {
+    date: 'Sep 2024 - May 2025',
+    title: 'Student IT Consultant',
+    org: 'Bridgewater State University',
+    location: 'Bridgewater, MA',
+    current: false,
+    education: false,
+  },
+  {
+    date: 'May 2025',
+    title: 'B.S. Criminal Justice',
+    org: 'Minor in Cybersecurity & Digital Forensics',
+    location: 'Bridgewater State University',
+    current: false,
+    education: true,
+  },
 ]
 
 export default function About() {
@@ -85,8 +107,8 @@ export default function About() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {[
-              `I graduated from Bridgewater State University and began my career as an Information Systems Specialist at a defense-focused technology contractor in Massachusetts. While my role initially centered on enterprise endpoint management using Jamf in macOS environments, I have increasingly taken on responsibilities related to cloud infrastructure, system provisioning, and access management.`,
-              `Over the past year, I’ve focused on deepening my skill set in cloud and infrastructure engineering. I’ve gained hands-on experience with tools like Terraform, Ansible, Docker, and AWS, while strengthening my understanding of automation, networking, and identity systems.`,
+              `I graduated from Bridgewater State University in May 2025 with a B.S. in Criminal Justice and a minor in Cybersecurity and Digital Forensics. I started my career at Aptima, Inc., a R&D government contractor in Massachusetts, as an Information Systems Specialist.`,
+              `My day-to-day involves enterprise endpoint management using Jamf, supporting macOS environments across the organization, as well as provisioning and maintaining infrastructure on AWS GovCloud using Terraform, Ansible, and Docker.`,
               `Outside of work, I enjoy staying active through golf and running, as well as spending time with friends and family!`,
             ].map((p, i) => (
               <p key={i} style={{
@@ -129,86 +151,95 @@ export default function About() {
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-
-          {values.map(v => (
-            <div key={v.title} style={{
-              padding: '28px',
-              border: '1px solid var(--border)',
-              borderRadius: '12px',
-              background: 'var(--card)',
-              transition: 'border-color 0.2s',
-            }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--border2)'}
-              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
-            >
-              <div style={{
-                color: 'var(--green)',
-                marginBottom: '12px',
-                display: 'flex',
-              }}>
-                {v.icon}
-              </div>
-              <div style={{
-                fontSize: '16px', fontWeight: 700,
-                color: 'var(--white)',
-                fontFamily: 'var(--font-sans)',
-                marginBottom: '8px',
-              }}>
-                {v.title}
-              </div>
-              <div style={{
-                fontSize: '14px', lineHeight: 1.7,
-                color: 'var(--text)',
-                fontFamily: 'var(--font-sans)',
-              }}>
-                {v.desc}
-              </div>
-            </div>
-          ))}
-
-          {/* Currently */}
+        {/* RIGHT — timeline */}
+        <div style={{
+          padding: '32px',
+          border: '1px solid var(--border)',
+          borderRadius: '12px',
+          background: 'var(--card)',
+          height: '100%',
+        }}>
           <div style={{
-            padding: '28px',
-            border: '1px solid rgba(0,200,150,0.2)',
-            borderRadius: '12px',
-            background: 'rgba(0,200,150,0.03)',
+            fontSize: '11px', fontWeight: 700,
+            color: 'var(--green)', letterSpacing: '0.15em',
+            textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)',
+            marginBottom: '32px',
           }}>
-            <div style={{
-              fontSize: '11px', fontWeight: 700,
-              color: 'var(--green)', letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              fontFamily: 'var(--font-mono)',
-              marginBottom: '16px',
-            }}>
-              Currently
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {currently.map(item => (
-                <div key={item} style={{
-                  display: 'flex', alignItems: 'flex-start', gap: '10px',
-                }}>
-                  <div style={{
-                    width: '4px', height: '4px',
-                    borderRadius: '50%',
-                    background: 'var(--green)',
-                    marginTop: '8px',
-                    flexShrink: 0,
-                  }} />
-                  <span style={{
-                    fontSize: '14px', color: 'var(--text2)',
-                    fontFamily: 'var(--font-sans)',
-                    lineHeight: 1.6,
-                  }}>
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
+            Experience & Education
           </div>
 
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {timeline.map((item, i) => (
+              <div key={i} style={{
+                display: 'flex', gap: '20px',
+                paddingBottom: i < timeline.length - 1 ? '32px' : '0',
+              }}>
+
+                {/* Dot + line */}
+                <div style={{
+                  display: 'flex', flexDirection: 'column',
+                  alignItems: 'center', flexShrink: 0,
+                  width: '16px',
+                }}>
+                  <div style={{
+                    width: '14px', height: '14px',
+                    borderRadius: '50%',
+                    background: item.current ? 'var(--green)' : item.education ? 'var(--cyan)' : 'var(--border2)',
+                    flexShrink: 0,
+                    marginTop: '3px',
+                    boxShadow: item.current ? '0 0 10px var(--green)' : 'none',
+                  }} />
+                  {i < timeline.length - 1 && (
+                    <div style={{
+                      width: '1px',
+                      flex: 1,
+                      background: 'var(--border)',
+                      marginTop: '6px',
+                      minHeight: '40px',
+                    }} />
+                  )}
+                </div>
+
+                {/* Content */}
+                <div style={{ flex: 1, paddingBottom: '4px' }}>
+                  <div style={{
+                    fontSize: '10px', color: 'var(--muted)',
+                    fontFamily: 'var(--font-mono)',
+                    letterSpacing: '0.08em',
+                    marginBottom: '6px',
+                    textTransform: 'uppercase',
+                  }}>
+                    {item.date}
+                  </div>
+                  <div style={{
+                    fontSize: '15px', fontWeight: 700,
+                    color: item.current ? 'var(--white)' : 'var(--text2)',
+                    fontFamily: 'var(--font-sans)',
+                    marginBottom: '4px',
+                  }}>
+                    {item.title}
+                  </div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: item.current ? 'var(--green)' : item.education ? 'var(--cyan)' : 'var(--text)',
+                    fontFamily: 'var(--font-sans)',
+                    marginBottom: '2px',
+                  }}>
+                    {item.org}
+                  </div>
+                  <div style={{
+                    fontSize: '11px', color: 'var(--muted)',
+                    fontFamily: 'var(--font-mono)',
+                  }}>
+                    {item.location}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   )
