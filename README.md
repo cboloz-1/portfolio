@@ -1,16 +1,24 @@
-# React + Vite
+# cboloz.com — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio site showcasing my background, skills, and cloud infrastructure projects. Built with React and Vite, deployed on Netlify with a custom domain.
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[cboloz.com](https://www.cboloz.com)
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This site serves as a central place to display my journey from IT and endpoint management into cloud infrastructure and DevOps. It includes an about section, skills breakdown, project showcase, and contact links.
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Tool | Purpose |
+|------|---------|
+| React | Frontend framework |
+| Vite | Build tool and local dev server |
+| Netlify | Hosting and automatic deployments |
+| GitHub | Source control |
+
+## Deployment
+
+Deployed automatically via Netlify. Every push to the `main` branch triggers a new build and deploy. No manual steps required.
