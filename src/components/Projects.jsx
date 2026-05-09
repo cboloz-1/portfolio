@@ -8,6 +8,14 @@ const projects = [
     status: 'complete',
   },
   {
+    title: 'AWS Infrastructure Dashboard + CI/CD Pipeline',
+    description: 'Built a GitHub Actions pipeline that scans Terraform with Checkov on every push, deploys infrastructure changes automatically, and sends email notifications via SNS on success or failure. Live Grafana dashboard connected to CloudWatch displays EC2 metrics and estimated AWS costs.',
+    tags: ['GitHub Actions', 'Terraform', 'Checkov', 'Docker', 'Grafana', 'CloudWatch', 'AWS SNS'],
+    github: 'https://github.com/cboloz-1/aws-dashboard',
+    live: null,
+    status: 'complete',
+  },
+  {
     title: 'More Projects Coming Soon',
     description: 'Currently building out additional projects focused on cloud security, infrastructure automation, and AWS architecture. Check back soon.',
     tags: [],
@@ -77,9 +85,9 @@ export default function Projects() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
+        gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '24px',
-        maxWidth: '1000px',
+        maxWidth: '1400px',
       }}>
         {projects.map(project => (
           <div key={project.title} style={{
