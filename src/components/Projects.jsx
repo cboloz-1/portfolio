@@ -94,7 +94,9 @@ export default function Projects() {
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '24px',
         maxWidth: '1400px',
+        margin: '0 auto',
       }}>
         {projects.map(project => (
           <div key={project.title} style={{
