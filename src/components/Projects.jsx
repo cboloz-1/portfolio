@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: 'Kubernetes Platform with GitOps',
-    description: 'Self-hosted Kubernetes cluster on AWS EC2 using k3s. All workloads deployed via ArgoCD GitOps — every push to GitHub automatically deploys to the cluster. Automatic HTTPS via cert-manager and Let\'s Encrypt. Runs Grafana connected to both Prometheus and CloudWatch for full observability.',
+    description: 'Self-hosted Kubernetes cluster on AWS EC2 using k3s. All workloads deployed via ArgoCD GitOps. Every push to GitHub automatically deploys to the cluster. Automatic HTTPS via cert-manager and Let\'s Encrypt. Runs Grafana connected to both Prometheus and CloudWatch for full observability.',
     tags: ['Kubernetes', 'k3s', 'ArgoCD', 'Terraform', 'Grafana', 'Prometheus', 'cert-manager', 'Traefik'],
     github: 'https://github.com/cboloz-1/k8s-platform',
     live: null,
