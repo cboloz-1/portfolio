@@ -16,12 +16,20 @@ const projects = [
     status: 'complete',
   },
   {
-    title: 'More Projects Coming Soon',
-    description: 'Currently building out additional projects focused on cloud security, infrastructure automation, and AWS architecture. Check back soon.',
-    tags: [],
-    github: null,
+    title: 'Kubernetes Platform with GitOps',
+    description: 'Self-hosted Kubernetes cluster on AWS EC2 using k3s. All workloads deployed via ArgoCD GitOps — every push to GitHub automatically deploys to the cluster. Automatic HTTPS via cert-manager and Let\'s Encrypt. Runs Grafana connected to both Prometheus and CloudWatch for full observability.',
+    tags: ['Kubernetes', 'k3s', 'ArgoCD', 'Terraform', 'Grafana', 'Prometheus', 'cert-manager', 'Traefik'],
+    github: 'https://github.com/cboloz-1/k8s-platform',
     live: null,
-    status: 'wip',
+    status: 'complete',
+  },
+  {
+    title: 'AWS Cost Intelligence & Security Scanner',
+    description: 'Serverless Lambda function that runs weekly, scans AWS for idle resources and security misconfigurations, pulls cost data from Cost Explorer, and delivers a formatted HTML report via SES. Publishes custom metrics to CloudWatch for Grafana dashboard integration.',
+    tags: ['AWS Lambda', 'Python', 'Terraform', 'AWS SES', 'CloudWatch', 'EventBridge', 'Cost Explorer'],
+    github: 'https://github.com/cboloz-1/aws-cost-optimizer',
+    live: null,
+    status: 'complete',
   },
 ]
 
@@ -85,8 +93,7 @@ export default function Projects() {
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '24px',
+        gridTemplateColumns: 'repeat(2, 1fr)',
         maxWidth: '1400px',
       }}>
         {projects.map(project => (
